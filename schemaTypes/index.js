@@ -7,9 +7,6 @@ import institute from "../schemas/institute";
 import photo from "../schemas/photo";
 import subArea from "../schemas/subArea";
 import video from "../schemas/video";
-
-
-
 import blog from '../schemas/blog'
 import blogType from '../schemas/blogType'
 import speaker from '../schemas/speaker'
@@ -19,7 +16,7 @@ import webinar from '../schemas/webinar'
 import event from '../schemas/event'
 import page from '../schemas/page'
 
-export const schemaTypes = [institute,campus,courseCategory,course,area,subArea,brand,photo,video];
+
 export const schemaTypes = [
   blog,
   blogType,
@@ -28,5 +25,5 @@ export const schemaTypes = [
   scholarship,
   webinar,
   event,
-  page
+  page,institute,campus,courseCategory,course,area,subArea,brand,photo,video
 ]
