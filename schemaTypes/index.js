@@ -6,6 +6,7 @@ import form from '../schemas/form'
 import scholarship from '../schemas/scholarship'
 import webinar from '../schemas/webinar'
 import event from '../schemas/event'
+import page from '../schemas/page'
 
 export const schemaTypes = [
   blog,
@@ -14,5 +15,6 @@ export const schemaTypes = [
   form,
   scholarship,
   webinar,
-  event
+  event,
+  page
 ]
