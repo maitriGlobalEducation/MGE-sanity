@@ -8,7 +8,13 @@ export default {
     { name: 'time', title: 'Time', type: 'string' },
     { name: 'selectStatus', title: 'Select Status', type: 'string' },
     { name: 'description', title: 'Description', type: 'text' },
-    { name: 'formType', title: 'Form Type', type: 'string' },
+     {
+      name: 'form',
+      title: 'Form Drop Down',
+      type: 'reference',
+      to: [{ type: 'form' }],
+      validation: Rule => Rule.required()
+    },
     { name: 'webinarPrice', title: 'Webinar Price', type: 'number' },
     { name: 'webinarImage', title: 'Webinar Image', type: 'image' },
     { name: 'meetingLink', title: 'Meeting Link', type: 'url' },

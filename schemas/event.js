@@ -7,7 +7,13 @@ export default {
     { name: 'date', title: 'Date', type: 'datetime' },
     { name: 'time', title: 'Time', type: 'string' },
     { name: 'description', title: 'Description', type: 'text' },
-    { name: 'formType', title: 'Form Type', type: 'string' },
+     {
+      name: 'form',
+      title: 'Form Drop Down',
+      type: 'reference',
+      to: [{ type: 'form' }],
+      validation: Rule => Rule.required()
+    },
     { name: 'eventType', title: 'Event Type', type: 'string' },
     { name: 'image', title: 'Image', type: 'image' },
     { name: 'banner', title: 'Banner', type: 'image' },
