@@ -11,13 +11,30 @@ export default {
       type: 'string',
       validation: Rule => Rule.required()
     },
-    {
-      name: 'bannerImage',
-      title: 'Banner Image',
-      type: 'image',
-      options: { hotspot: true },
-      validation: Rule => Rule.required()
-    },
+   {
+  name: 'image',
+  title: 'Image (300×295)',
+  type: 'image',
+  options: {
+    hotspot: true
+  },
+  validation: Rule =>
+    Rule.required().custom((image) => {
+      if (!image?.asset) return true;
+
+      const dims = image.asset?.metadata?.dimensions;
+      if (!dims) {
+     
+        return true;
+      }
+
+      const { width, height } = dims;
+
+      return width === 300 && height === 295
+        ? true
+        : `Image must be exactly 300×295 pixels. Uploaded image is ${width}×${height} pixels.`;
+    })
+},
     {
       name: 'description',
       title: 'Description',
