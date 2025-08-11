@@ -5,8 +5,22 @@ export default {
   fields: [
     { name: 'title', title: 'Title', type: 'string' },
     { name: 'date', title: 'Date', type: 'datetime' },
-    { name: 'time', title: 'Time', type: 'string' },
+    { name: 'subtitle', title: 'subtitle', type: 'string' },
     { name: 'description', title: 'Description', type: 'text' },
+    {
+      name: 'homescreenbuttons',
+      title: 'Homescreen Buttons',
+      type: 'array',
+      of: [{ type: 'string' }],
+      options: {
+        layout: 'tags'
+      }},
+
+
+
+
+
+
      {
       name: 'form',
       title: 'Form Drop Down',
@@ -14,8 +28,9 @@ export default {
       to: [{ type: 'form' }],
       validation: Rule => Rule.required()
     },
+    
     { name: 'eventType', title: 'Event Type', type: 'string' },
-    { name: 'image', title: 'Image', type: 'image' },
+    { name: 'image', title: 'Image(300*295)', type: 'image' },
     { name: 'banner', title: 'Banner', type: 'image' },
     { name: 'metaTitle', title: 'Meta Title', type: 'string' },
     { name: 'metaKeywords', title: 'Meta Keywords', type: 'array', of: [{ type: 'string' }] },
