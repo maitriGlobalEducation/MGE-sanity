@@ -3,7 +3,7 @@ import brand from "../schemas/brand";
 import campus from "../schemas/campus";
 import course from "../schemas/course";
 import courseCategory from "../schemas/courseCategory";
-import institute from "../schemas/institute";
+
 import photo from "../schemas/photo";
 import subArea from "../schemas/subArea";
 import video from "../schemas/video";
@@ -26,11 +26,7 @@ import subMenu from '../schemas/subMenu'
 import pagefeature from "../schemas/pagefeature";
 import serviceType from "../schemas/serviceType";
 import services from "../schemas/services";
-
-
-
-
-
+import university from "../schemas/university";
 
 export const schemaTypes = [
   blog,
@@ -40,7 +36,7 @@ export const schemaTypes = [
   scholarship,
   webinar,
   event,
-  page,institute,campus,courseCategory,course,area,subArea,brand,photo,video,
+  page,university,campus,courseCategory,course,area,subArea,brand,photo,video,
   testimonial,
   videoTestimonial,
   coachingCourse,
