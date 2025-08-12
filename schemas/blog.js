@@ -88,9 +88,13 @@ export default {
       validation: Rule => Rule.max(160).warning('Meta description should be under 160 characters for better SEO')
     },
     {
-      name: 'focusKeyword',
-      title: 'Focus Keyword',
-      type: 'string'
+      name: 'focusKeywords',
+      title: 'Focus Keywords',
+      type: 'array',
+      of: [{ type: 'string' }],
+      options: {
+        layout: 'tags'
+      }
     },
     {
       name: 'seoKeywords',
