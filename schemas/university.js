@@ -1,5 +1,5 @@
 export default {
-  name: 'University',
+  name: 'university',
   title: 'University',
   type: 'document',
   fields: [
@@ -89,6 +89,19 @@ export default {
     })
 },{ name: 'introduction', title: 'Introduction', type: 'text' },
     { name: 'campus', title: 'Campus', type: 'reference', to: [{ type: 'campus' }] },
+    {
+      name: 'scholarship',
+      title: 'Scholarship',
+      type: 'reference',
+      to: [{ type: 'scholarship' }],
+      validation: Rule => Rule.required()
+    },{
+      name: 'course',
+      title: 'Course',
+      type: 'reference',
+      to: [{ type: 'course' }],
+      validation: Rule => Rule.required()
+    },
     
     { name: 'relatedlinks', title: 'Related Links', type: 'array', of: [{ type: 'string' }] },
     { name: 'content', title: 'Content', type: 'text' },
