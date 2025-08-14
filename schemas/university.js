@@ -4,7 +4,30 @@ export default {
   type: 'document',
   fields: [
     { name: 'Universityname', title: 'UniversityName', type: 'string',validation: Rule => Rule.required() },
-      
+    {
+      name: 'logo',
+      title: 'logo (300×295) ',
+      type: 'image',
+      options: {
+       hotspot: true
+      },
+      validation: Rule =>
+        Rule.required().custom((image) => {
+          if (!image?.asset) return true;
+
+            const dims = image.asset?.metadata?.dimensions;
+          if (!dims) {
+     
+          return true;
+            }
+
+      const { width, height } = dims;
+
+      return width === 300 && height === 295
+        ? true
+        : `Image must be exactly 300×295 pixels. Uploaded image is ${width}×${height} pixels.`;
+    })},
+
     { name: 'contentTitle', title: 'Content Title(Present over banner Image)', type: 'string',validation: Rule => Rule.required() },
     { name: 'subtitle', title: 'Sub Title(Present over banner Image)', type: 'string',validation: Rule => Rule.required() },
     {
@@ -115,8 +138,9 @@ export default {
         layout: 'tags'
       }
     },
-    { name: 'metaDescription', title: 'Meta Description', type: 'string' },
-    { name: 'metaTitle', title: 'Meta Title', type: 'string' },
+    { name: 'reportYear', title: 'Year of Data Updates(presented in Home Screen)', type: 'string' },
+    { name: 'metaDescription', title: 'Meta Description(present in Home screen)', type: 'string' },
+    { name: 'metaTitle', title: 'Meta Title(present in Home screen)', type: 'string' },
      {
       name: 'focusKeywords',
       title: 'Focus Keywords',
