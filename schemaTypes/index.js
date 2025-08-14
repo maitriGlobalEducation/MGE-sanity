@@ -27,6 +27,7 @@ import pagefeature from "../schemas/pagefeature";
 import serviceType from "../schemas/serviceType";
 import services from "../schemas/services";
 import university from "../schemas/university";
+import careers from "../schemas/careers";
 
 export const schemaTypes = [
   blog,
@@ -47,5 +48,6 @@ export const schemaTypes = [
   subMenu,
   pagefeature,
   serviceType,
-  services
+  services,
+  careers
 ]
