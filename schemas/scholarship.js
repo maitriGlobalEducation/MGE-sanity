@@ -1,10 +1,18 @@
 
+import CommaKeywordsInput from './CommaKeywordsInput.jsx'
+
 
 export default {
   name: 'scholarship',
   title: 'Scholarship',
   type: 'document',
   fields: [
+    {
+      name: 'title',
+      title: 'Title',
+      type: 'string',
+      validation: Rule => Rule.required()
+    },
     {
       name: 'name',
       title: 'Name',
@@ -13,7 +21,7 @@ export default {
     },
    {
   name: 'image',
-  title: 'Image (300×295)',
+  title: 'Image (1920x1080)',
   type: 'image',
   options: {
     hotspot: true
@@ -36,6 +44,12 @@ export default {
     })
 },
     {
+      name: 'tagline',
+      title: 'tagline',
+      type: 'text',
+      validation: Rule => Rule.required()
+    },
+    {
       name: 'description',
       title: 'Description',
       type: 'text',
@@ -45,8 +59,28 @@ export default {
       name: 'amount',
       title: 'Amount',
       type: 'string',
-      validation: Rule => Rule.required()
+      // validation: Rule => Rule.required()
     },
+    {
+  name: 'university',
+  title: 'University',
+  type: 'reference',
+  to: [{ type: 'university' }], // this should match the schema name in university.js
+  validation: Rule => Rule.required(),
+  fields: [
+    {
+      name: 'name',
+      title: 'Name',
+      type: 'string',
+    },
+    {
+      name: 'logo',
+      title: 'Logo',
+      type: 'image',
+      options: { hotspot: true },
+    },
+  ]
+},
     {
       name: 'deadline',
       title: 'Deadline',
@@ -65,20 +99,27 @@ export default {
       options: { layout: 'tags' },
       validation: Rule => Rule.required()
     },
-    {
-      name: 'metaTitle',
-      title: 'Meta Title',
-      type: 'string',
-      validation: Rule => Rule.required().max(60)
-    },
-    {
-      name: 'metaKeywords',
-      title: 'Meta Keywords',
-      type: 'array',
-      of: [{ type: 'string' }],
-      options: { layout: 'tags' },
-      validation: Rule => Rule.required()
-    },
+   {
+  name: 'metaKeywords',
+  title: 'Meta Keywords',
+  type: 'array',
+  of: [{ type: 'string' }],
+  options: {
+    layout: 'tags' // gives you a tag input UI
+  },
+  description: 'Enter comma-separated keywords. They will be split into tags automatically.',
+  components: {
+    input: CommaKeywordsInput
+  }
+},
+    // {
+    //   name: 'metaKeywords',
+    //   title: 'Meta Keywords',
+    //   type: 'array',
+    //   of: [{ type: 'string' }],
+    //   options: { layout: 'tags' },
+    //   validation: Rule => Rule.required()
+    // },
     {
       name: 'metaDescription',
       title: 'Meta Description',
