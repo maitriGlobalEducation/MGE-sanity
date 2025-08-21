@@ -112,13 +112,14 @@ export default {
     })
 },{ name: 'introduction', title: 'Introduction', type: 'text' },
     { name: 'campus', title: 'Campus', type: 'reference', to: [{ type: 'campus' }] },
+    // {
+    //   name: 'scholarship',
+    //   title: 'Scholarship',
+    //   type: 'reference',
+    //   to: [{ type: 'scholarship' }],
+    //   validation: Rule => Rule.required()
+    // },
     {
-      name: 'scholarship',
-      title: 'Scholarship',
-      type: 'reference',
-      to: [{ type: 'scholarship' }],
-      validation: Rule => Rule.required()
-    },{
       name: 'course',
       title: 'Course',
       type: 'reference',
