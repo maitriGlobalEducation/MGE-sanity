@@ -35,7 +35,7 @@ export default {
     },
    {
   name: 'image',
-  title: 'Image (300×295)',
+  title: 'Image (Size (1600 x 1200)',
   type: 'image',
   options: {
     hotspot: true
@@ -52,9 +52,9 @@ export default {
 
       const { width, height } = dims;
 
-      return width === 300 && height === 295
+      return width === 1600 && height === 1200
         ? true
-        : `Image must be exactly 300×295 pixels. Uploaded image is ${width}×${height} pixels.`;
+        : `Image must be exactly 1600x1200 pixels. Uploaded image is ${width}×${height} pixels.`;
     })
 },
     {

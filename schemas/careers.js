@@ -5,7 +5,7 @@ export default {
   fields: [
        { name: 'title', title: 'Title', type: 'string' },
     { name: 'subtitle', title: 'Sub Title', type: 'string' },
-    { name: 'image', title: 'Image', type: 'image',options: {
+    { name: 'image', title: 'Size (600x900)', type: 'image',options: {
             hotspot: true
         } },
         {
