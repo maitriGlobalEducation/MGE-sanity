@@ -1,3 +1,5 @@
+import CommaKeywordsInput from './CommaKeywordsInput.jsx'
+
 export default {
   name: 'blog',
   title: 'Blogs',
@@ -88,33 +90,72 @@ export default {
       validation: Rule => Rule.max(160).warning('Meta description should be under 160 characters for better SEO')
     },
     {
-      name: 'focusKeywords',
-      title: 'Focus Keywords',
-      type: 'array',
-      of: [{ type: 'string' }],
-      options: {
-        layout: 'tags'
-      }
-    },
-    {
-      name: 'seoKeywords',
-      title: 'SEO Keywords',
-      type: 'array',
-      of: [{ type: 'string' }],
-      options: {
-        layout: 'tags'
-      }
-    },
-    {
-      name: 'aiSeoKeywords',
-      title: 'AI SEO Keywords',
-      type: 'array',
-      of: [{ type: 'string' }],
-      options: {
-        layout: 'tags'
-      },
-      description: 'Paste AI-generated keywords here (e.g., from ChatGPT)',
-    },
+  name: 'focusKeywords',
+  title: 'Focus Keywords',
+  type: 'array',
+  of: [{ type: 'string' }],
+  options: {
+    layout: 'tags' // gives you a tag input UI
+  },
+  description: 'Enter comma-separated keywords. They will be split into tags automatically.',
+  components: {
+    input: CommaKeywordsInput
+  }
+},{
+  name: 'seoKeywords',
+  title: 'SEO Keywords',
+  type: 'array',
+  of: [{ type: 'string' }],
+  options: {
+    layout: 'tags' // gives you a tag input UI
+  },
+  description: 'Enter comma-separated keywords. They will be split into tags automatically.',
+  components: {
+    input: CommaKeywordsInput
+  }
+},{
+  name: 'aiSeoKeywords',
+  title: 'AI SEO Keywords',
+  type: 'array',
+  of: [{ type: 'string' }],
+  options: {
+    layout: 'tags' // gives you a tag input UI
+  },
+  description: 'Enter comma-separated keywords. They will be split into tags automatically.',
+  components: {
+    input: CommaKeywordsInput
+  }
+},
+
+
+    // {
+    //   name: 'focusKeywords',
+    //   title: 'Focus Keywords',
+    //   type: 'array',
+    //   of: [{ type: 'string' }],
+    //   options: {
+    //     layout: 'tags'
+    //   }
+    // },
+    // {
+    //   name: 'seoKeywords',
+    //   title: 'SEO Keywords',
+    //   type: 'array',
+    //   of: [{ type: 'string' }],
+    //   options: {
+    //     layout: 'tags'
+    //   }
+    // },
+    // {
+    //   name: 'aiSeoKeywords',
+    //   title: 'AI SEO Keywords',
+    //   type: 'array',
+    //   of: [{ type: 'string' }],
+    //   options: {
+    //     layout: 'tags'
+    //   },
+    //   description: 'Paste AI-generated keywords here (e.g., from ChatGPT)',
+    // },
     {
       name: 'logContent',
       title: 'Log Content Elements',

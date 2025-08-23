@@ -1,3 +1,4 @@
+import CommaKeywordsInput from './CommaKeywordsInput.jsx'
 export default {
   name: 'AddPage',
   title: 'Add Page',
@@ -29,8 +30,15 @@ export default {
       title: 'Meta Keywords',
       type: 'array',
       of: [{ type: 'string' }],
-      description: 'AI SEO keywords relevant to the route',
+      options: {
+        layout: 'tags' // gives you a tag input UI
+      },
+      description: 'Enter comma-separated keywords. They will be split into tags automatically.',
+      components: {
+        input: CommaKeywordsInput
+      }
     },
+   
     {
       name: 'ogImage',
       title: 'Open Graph Image',

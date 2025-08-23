@@ -1,3 +1,6 @@
+import CommaKeywordsInput from './CommaKeywordsInput.jsx'
+
+
 export default {
   name: 'event',
   title: 'Event',
@@ -45,10 +48,23 @@ export default {
       type: 'array',
       of: [{ type: 'string' }],
       options: {
-        layout: 'tags'
+        layout: 'tags' // gives you a tag input UI
       },
-      description: 'Paste AI-generated keywords here (e.g., from ChatGPT)',
+      description: 'Enter comma-separated keywords. They will be split into tags automatically.',
+      components: {
+        input: CommaKeywordsInput
+      }
     },
+    // {
+    //   name: 'aiSeoKeywords',
+    //   title: 'AI SEO Keywords',
+    //   type: 'array',
+    //   of: [{ type: 'string' }],
+    //   options: {
+    //     layout: 'tags'
+    //   },
+    //   description: 'Paste AI-generated keywords here (e.g., from ChatGPT)',
+    // },
     { name: 'emailDescription', title: 'Email Description', type: 'text' }
   ]
 }
