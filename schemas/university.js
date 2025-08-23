@@ -1,3 +1,4 @@
+import CommaKeywordsInput from './CommaKeywordsInput.jsx'
 export default {
   name: 'university',
   title: 'University',
@@ -129,35 +130,47 @@ export default {
     
     { name: 'relatedlinks', title: 'Related Links', type: 'array', of: [{ type: 'string' }] },
     { name: 'content', title: 'Content', type: 'text' },
-    
     {
       name: 'metaKeywords',
       title: 'Meta Keywords',
       type: 'array',
       of: [{ type: 'string' }],
       options: {
-        layout: 'tags'
+        layout: 'tags' // gives you a tag input UI
+      },
+      description: 'Enter comma-separated keywords. They will be split into tags automatically.',
+      components: {
+        input: CommaKeywordsInput
       }
     },
+    
     { name: 'reportYear', title: 'Year of Data Updates(presented in Home Screen)', type: 'string' },
     { name: 'metaDescription', title: 'Meta Description(present in Home screen)', type: 'string' },
     { name: 'metaTitle', title: 'Meta Title(present in Home screen)', type: 'string' },
+  
      {
-      name: 'focusKeywords',
-      title: 'Focus Keywords',
-      type: 'array',
-      of: [{ type: 'string' }],
-      options: {
-        layout: 'tags'
-      }
-    },
-    {
       name: 'seoKeywords',
       title: 'SEO Keywords',
       type: 'array',
       of: [{ type: 'string' }],
       options: {
-        layout: 'tags'
+        layout: 'tags' // gives you a tag input UI
+      },
+      description: 'Enter comma-separated keywords. They will be split into tags automatically.',
+      components: {
+        input: CommaKeywordsInput
+      }
+    },{
+      name: 'focusKeywords',
+      title: 'Focus Keywords',
+      type: 'array',
+      of: [{ type: 'string' }],
+      options: {
+        layout: 'tags' // gives you a tag input UI
+      },
+      description: 'Enter comma-separated keywords. They will be split into tags automatically.',
+      components: {
+        input: CommaKeywordsInput
       }
     }
     

@@ -91,14 +91,20 @@ export default {
       title: 'Awarded By',
       type: 'string',
     },
-    {
-      name: 'aiSeoKeywords',
-      title: 'AI SEO Keywords',
-      type: 'array',
-      of: [{ type: 'string' }],
-      options: { layout: 'tags' },
-      validation: Rule => Rule.required()
-    },
+   
+     {
+  name: 'aiSeoKeywords',
+  title: 'AI SEO Keywords',
+  type: 'array',
+  of: [{ type: 'string' }],
+  options: {
+    layout: 'tags' // gives you a tag input UI
+  },
+  description: 'Enter comma-separated keywords. They will be split into tags automatically.',
+  components: {
+    input: CommaKeywordsInput
+  }
+},
    {
   name: 'metaKeywords',
   title: 'Meta Keywords',
