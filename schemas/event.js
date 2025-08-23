@@ -33,7 +33,7 @@ export default {
     },
     
     { name: 'eventType', title: 'Event Type', type: 'string' },
-    { name: 'image', title: 'Image(300*295)', type: 'image' },
+    { name: 'image', title: 'Image(1600*1200)', type: 'image' },
     { name: 'banner', title: 'Banner', type: 'image' },
     { name: 'metaTitle', title: 'Meta Title', type: 'string' },
     { name: 'metaKeywords', title: 'Meta Keywords', type: 'array', of: [{ type: 'string' }] },

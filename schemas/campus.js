@@ -4,7 +4,7 @@ export default {
   type: 'document',
   fields: [
     { name: 'name', title: 'Name', type: 'string' },
-    { name: 'image', title: 'Image', type: 'image' },
+    { name: 'image',   title: 'Size (600x400)', type: 'image'  },
     {
       name: 'country',
       title: 'Country',
